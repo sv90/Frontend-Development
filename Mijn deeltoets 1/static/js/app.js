@@ -4,7 +4,7 @@ var FRISBEE = FRISBEE || {};
 //Empty function
 (function () {
 	
-	// Data objecten
+	// Data objects
 	FRISBEE.schedule = {
 
 		schedule: [
@@ -91,7 +91,7 @@ var FRISBEE = FRISBEE || {};
                 sections = qwery('section[data-route]'),
                 section = qwery('[data-route=' + route + ']')[0];  
 
-            // Show active section, hide all other
+            // Show active section, hide all other (for loop)
             if (section) {
             	for (var i=0; i < sections.length; i++){
             		sections[i].classList.remove('active');
@@ -99,7 +99,7 @@ var FRISBEE = FRISBEE || {};
             	section.classList.add('active');
             }
 
-            // Default route
+            // Default route (no route, go default state)
             if (!route) {
             	sections[0].classList.add('active');
             }
@@ -126,7 +126,6 @@ var FRISBEE = FRISBEE || {};
 	}
 	// DOM ready
 	domready(function () {
-		// Kickstart FRISBEElication
 		FRISBEE.controller.init();
 	});
 	
