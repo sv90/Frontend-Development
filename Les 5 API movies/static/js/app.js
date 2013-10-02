@@ -57,6 +57,11 @@ var FRISBEE = FRISBEE || {};
     { team: "Beast Amsterdam", Win: "2", Lost: "2", Sw: "6", Sl: "8", Pw: "30", Pl: "34"},
     { team: "Amsterdam Money Gang", Win: "1", Lost: "3", Sw: "6", Sl: "10", Pw: "30", Pl: "37"}]
 	};
+
+	FRISBEE.movie = {
+		movies: [
+	{ 
+	};
 	
 	// Controller Init
 	FRISBEE.controller = {
@@ -80,6 +85,11 @@ var FRISBEE = FRISBEE || {};
 			    '/ranking': function() {
 			    	FRISBEE.page.ranking();
 			    },
+
+			    '/movie': function() {
+			    	FRISBEE.page.movie();
+			    },
+
 			    '*': function() {
 			    	FRISBEE.page.schedule();
 			    }
@@ -121,6 +131,11 @@ var FRISBEE = FRISBEE || {};
 
 		ranking: function () {
 			Transparency.render(qwery('[data-route=ranking')[0], FRISBEE.ranking);
+			FRISBEE.router.change();
+		},
+
+		movie: function () {
+			Transparency.render(qwery('[data-route=movie')[0], FRISBEE.movie);
 			FRISBEE.router.change();
 		}
 	}

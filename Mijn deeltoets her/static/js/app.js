@@ -1,7 +1,7 @@
 // Namespace
 var FRISBEE = FRISBEE || {};
 
-//self-invoking anonymous function
+// Self-invoking anonymous function
 (function () {
 	
 	// Data objects
@@ -57,12 +57,11 @@ var FRISBEE = FRISBEE || {};
     { team: "Beast Amsterdam", Win: "2", Lost: "2", Sw: "6", Sl: "8", Pw: "30", Pl: "34"},
     { team: "Amsterdam Money Gang", Win: "1", Lost: "3", Sw: "6", Sl: "10", Pw: "30", Pl: "37"}]
 	};
-	
-	// Controller Init
-	FRISBEE.controller = {
+
+	// Start application
+	FRISBEE.startApp = {
 		init: function () {
-			// Initialize router
-			FRISBEE.router.init();
+			FRISBEE.startApp.init();
 		}
 	};
 
