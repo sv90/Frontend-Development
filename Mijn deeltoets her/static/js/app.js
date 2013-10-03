@@ -61,7 +61,7 @@ var FRISBEE = FRISBEE || {};
 	// Start application
 	FRISBEE.startApp = {
 		init: function () {
-			FRISBEE.startApp.init();
+			FRISBEE.router.init();
 		}
 	};
 
@@ -125,7 +125,7 @@ var FRISBEE = FRISBEE || {};
 	}
 	// DOM ready
 	domready(function () {
-		FRISBEE.controller.init();
+		FRISBEE.startApp.init();
 	});
 	
 })();
