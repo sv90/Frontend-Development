@@ -1,8 +1,15 @@
-// Namespace
+// Global namespace
 var FRISBEE = FRISBEE || {};
 
 // Self-invoking anonymous function
 (function () {
+
+	// Initialize JS - start application (when DOM is ready, line 127)
+	FRISBEE.startApp = {
+		init: function () {
+			FRISBEE.router.init();
+		}
+	};
 	
 	// Data objects
 	FRISBEE.schedule = {
@@ -17,8 +24,8 @@ var FRISBEE = FRISBEE || {};
     { date: "Monday, 12:00pm", team1: "Chasing", team1Score: "8", team2: "Beast Amsterdam", team2Score: "15"},
     { date: "Monday, 12:00pm", team1: "Boomsquad", team1Score: "15", team2: "Burning Snow", team2Score: "8"},
     { date: "Monday, 1:00pm", team1: "Chasing", team1Score: "15", team2: "Boomsquad", team2Score: "14"},
-    { date: "Monday, 1:00pm", team1: "Burning Snow", team1Score: "15", team2: "Amsterdam Money Gang", team2Score: "11"}]
-
+    { date: "Monday, 1:00pm", team1: "Burning Snow", team1Score: "15", team2: "Amsterdam Money Gang", team2Score: "11"}
+    	]
 	};
 
 	FRISBEE.game = {
@@ -45,8 +52,8 @@ var FRISBEE = FRISBEE || {};
     { score: "20", team1: "Boomsquad", team1Score: "13", team2: "Burning Snow", team2Score: "7"},
     { score: "21", team1: "Boomsquad", team1Score: "14", team2: "Burning Snow", team2Score: "7"},
     { score: "22", team1: "Boomsquad", team1Score: "14", team2: "Burning Snow", team2Score: "8"},
-    { score: "23", team1: "Boomsquad", team1Score: "15", team2: "Burning Snow", team2Score: "8"}]
-	
+    { score: "23", team1: "Boomsquad", team1Score: "15", team2: "Burning Snow", team2Score: "8"}
+    	]
 	};
 
 	FRISBEE.ranking = {
@@ -55,14 +62,8 @@ var FRISBEE = FRISBEE || {};
 	{ team: "Boomsquad", Win: "2", Lost: "2", Sw: "9", Sl: "8", Pw: "36", Pl: "34"},
 	{ team: "Chasing", Win: "2", Lost: "2", Sw: "7", Sl: "9", Pw: "35", Pl: "39"},
     { team: "Beast Amsterdam", Win: "2", Lost: "2", Sw: "6", Sl: "8", Pw: "30", Pl: "34"},
-    { team: "Amsterdam Money Gang", Win: "1", Lost: "3", Sw: "6", Sl: "10", Pw: "30", Pl: "37"}]
-	};
-
-	// Start application
-	FRISBEE.startApp = {
-		init: function () {
-			FRISBEE.router.init();
-		}
+    { team: "Amsterdam Money Gang", Win: "1", Lost: "3", Sw: "6", Sl: "10", Pw: "30", Pl: "37"}
+    	]
 	};
 
 	// Router
@@ -85,6 +86,7 @@ var FRISBEE = FRISBEE || {};
 			});
 		},
 
+		// Change method
 		change: function () {
             var route = window.location.hash.slice(2),
                 sections = qwery('section[data-route]'),
@@ -123,7 +125,7 @@ var FRISBEE = FRISBEE || {};
 			FRISBEE.router.change();
 		}
 	}
-	// DOM ready
+	// When DOM is ready, initialize - start the application (line 7)
 	domready(function () {
 		FRISBEE.startApp.init();
 	});

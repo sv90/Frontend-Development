@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ultimate Frisbee Score App: Autumn 2013 Tournament</title>
+    <link href="static/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header>
+        <h1>Ultimate Frisbee Score App: Autumn 2013 Tournament</h1>
+        <nav>
+            <ul>
+                <li><a href="#/schedule">Schedule</a></li>
+                <li><a href="#/game">Game</a></li>
+                <li><a href="#/ranking">Ranking</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <article id="content" class="col">
+        
+        <section data-route="schedule"> 
+                    <table>
+                        <tr>
+                            <th>Time</th>
+                            <th>Team 1 Name</th>
+                            <th>Team 1 Score</th>
+                            <th>Team 2 Name</th>
+                            <th>Team 2 Score</th>
+                            <th>Last Update</th>
+                            <th>Update Score</th>
+                        </tr>
+                        <tbody data-bind="objects">
+                            <tr>
+                                <td data-bind="time"></td>
+                                <td data-bind="team_1"><span data-bind="name"</span></td>
+                                <td data-bind="team_1_score"></td>
+                                <td data-bind="team_2"><span data-bind="name"</span></td>
+                                <td data-bind="team_2_score"></td>
+                                <td data-bind="time_last_updated"></td>
+                                <td><a href="#">Update Score</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+        </section>
+
+        <section data-route="game">
+            <table>
+                <tr>
+                    <th>Game</th>
+                    <th>Team</th>
+                    <th>Result</th>
+                    <th>Team</th>
+                </tr>
+                <tbody data-bind="games">
+                    <tr>
+                        <td data-bind="score"></td>
+                        <td data-bind="team1"></td>
+                        <td><span data-bind="team1Score"></span> - <span data-bind="team2Score"></span></td>
+                        <td data-bind="team2"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section data-route="ranking">
+            <div data-bind="objects">
+                    <h1>Pool <span data-bind="name"></span></h1>
+                    <table>
+                        <tr>
+                            <th>Team</th>
+                            <th>GP</th>
+                            <th>W</th>
+                            <th>L</th>
+                            <th>PS</th>
+                            <th>SA</th>
+                            <th>+/-</th>
+                        </tr>
+                        <tbody data-bind="standings">
+                            <tr>
+                                <td data-bind="team"><span data-bind="name"</span></td>
+                                <td data-bind="games_played"></td>
+                                <td data-bind="wins"></td>
+                                <td data-bind="losses"></td>
+                                <td data-bind="points_scored"></td>
+                                <td data-bind="points_allowed"></td>
+                                <td data-bind="plus_minus"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>	
+
+    </article>
+
+    <!-- Libs -->
+    <script src="static/js/lib/routie.min.js"></script>
+    <script src="static/js/lib/ready.min.js" type="text/javascript"></script>
+    <script src="static/js/lib/qwery.min.js" type="text/javascript"></script>
+    <script src="static/js/lib/transparancy.min.js" type="text/javascript"></script>
+    <script src="static/js/lib/quo.js" type="text/javascript"></script>
+
+    <!-- Application -->
+    <script src="static/js/app.js"></script>
+
+</body>
+</html>
