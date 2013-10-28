@@ -1,4 +1,4 @@
-// Global namespace
+// Global namespace :)
 var FRISBEE = FRISBEE || {};
 
 // Self-invoking anonymous function
@@ -8,14 +8,14 @@ var FRISBEE = FRISBEE || {};
 	FRISBEE.startApp = {
 		init: function () {
 			FRISBEE.router.init();
-			var type                 =  'POST',
-                                url                  =  'https://api.leaguevine.com/v1/game_scores/',
-                                postData         = JSON.stringify({
-                                        game_id: '127236',
-                                    team_1_score: '2',
-                                    team_2_score: '4',
-                                    is_final: 'False'
-                                });
+			var type =  'POST',
+                        url  =  'https://api.leaguevine.com/v1/game_scores/',
+                        postData  = JSON.stringify({
+                        	game_id: '127236',
+                                team_1_score: '2',
+                                team_2_score: '4',
+                                is_final: 'False'
+                        });
 
                         // Create request
                         var xhr = new XMLHttpRequest();
@@ -30,14 +30,6 @@ var FRISBEE = FRISBEE || {};
                         // Send request (with data as a json string)
                         xhr.send(postData);
 		}
-	};
-
-	FRISBEE.schedule = {
-
-	};
-
-	FRISBEE.ranking = {
-
 	};
 
 	FRISBEE.game = {
