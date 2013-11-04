@@ -52,18 +52,19 @@ FRISBEE.game = {
 // Initialize JS - start application (when DOM is ready)
 FRISBEE.startApp = {
     init: function(){
+        FRISBEE.gestures.init();
 
         document.getElementById('finalScore').onclick = function () {
             var type = 'POST',
             url = 'https://api.leaguevine.com/v1/game_scores/',
-            // Convert value to JSON
-            postData = JSON.stringify({
-                game_id: '127236',
-                team_1_score: FRISBEE.game.getScore1(),
-                team_2_score: FRISBEE.game.getScore2(),
-                is_final: 'True'
+// Convert value to JSON
+postData = JSON.stringify({
+    game_id: '127236',
+    team_1_score: FRISBEE.game.getScore1(),
+    team_2_score: FRISBEE.game.getScore2(),
+    is_final: 'True'
 
-            });
+});
 
 // Create request - retrieve data from a URL without having to do a full page refresh
 var xhr = new XMLHttpRequest();
@@ -142,6 +143,18 @@ FRISBEE.directives = {
     }
 }
 
+FRISBEE.gestures = {
+                init: function(){
+                        $$('section.swipeLeft').swipeLeft(function() {
+                                window.location.href = "#/ranking"; 
+                        });
+                        
+                        $$('section.swipeRight').swipeRight(function() {
+                                window.location.href = "#/schedule"; 
+                        });
+                }
+        }
+
 // Pages
 FRISBEE.page = {
     game: function (game_id) {
@@ -177,7 +190,6 @@ Ranking: function () {
 loader.style.display = 'block';
 //console.log("FRISBEE.Ranking.pools" + FRISBEE.Ranking.pools);
 poolData: $$.json('https://api.leaguevine.com/v1/pools/?tournament_id=19389&access_token=e6c8dbf9f2',{}, function(data){
-
     Transparency.render(qwery('[data-route=Ranking]')[0], data);
 //Hide the loader
 loader.style.display = 'none';
