@@ -1,0 +1,461 @@
+/* General styles, mobile first */
+* {
+	box-sizing:border-box;
+}
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+#fade-in{
+        opacity:0;  /* make things invisible upon start */
+    -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+ 
+    -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+ 
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    animation-duration:1s;
+        -webkit-animation-delay: 0.7s;
+        -moz-animation-delay: 0.7s;
+        animation-delay: 0.7s;
+}
+
+body {
+	font-size:100%;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: 300;
+	color:#333;
+	background-color: #fff;
+}
+h1 {
+	text-shadow: 1px 1px 1px #fff;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+}
+p {
+
+}
+a {
+	font-weight:bold;
+	color:#000;
+	-webkit-transition:all .5s ease;
+}
+ul {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+	ul li {
+		
+	}
+		ul li a {
+			display:block;
+			border-color:#333;
+			border-style:solid;
+			border-width:1px 0 0;
+			background-color: #f5f5f5;
+			line-height:2;
+			text-decoration: none;
+			padding:0 2%;
+		}
+			ul li a strong {
+				display:block;
+				font-weight:normal;
+				color:#333;
+			}
+		ul li:last-child a {
+			border-bottom-width:1px;
+		}
+
+		ul li a:hover {
+			background-color: #eee;
+		}
+
+section img, video {
+	max-width: 100%;
+	border:10px solid #eee;
+	box-shadow:0 0 5px #aaa;
+	border-radius: 5px;
+	margin-bottom: 1em;
+}
+video {
+	width:100%;
+}
+
+table {
+	width:100%;
+	height:90%;
+}
+thead tr {
+	background-color: #fff;
+}
+th, td {
+	padding-top:1%;
+	font-size: 100%;
+}
+th {
+	font-weight: bold;
+	text-align:left;
+}
+figure {
+	margin:0;
+}
+figcaption {
+	font-size:.8em;
+	color:#666;
+	font-style: italic;
+}
+
+/* swiper */
+.swipe {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+}
+
+/* loader section */
+.bubblingG {
+text-align: center;
+width:80px;
+height:50px;
+}
+
+.bubblingG span {
+display: inline-block;
+vertical-align: middle;
+width: 10px;
+height: 10px;
+margin: 25px auto;
+background: #000000;
+-moz-border-radius: 50px;
+-moz-animation: bubblingG 1.3s infinite alternate;
+-webkit-border-radius: 50px;
+-webkit-animation: bubblingG 1.3s infinite alternate;
+-ms-border-radius: 50px;
+-ms-animation: bubblingG 1.3s infinite alternate;
+-o-border-radius: 50px;
+-o-animation: bubblingG 1.3s infinite alternate;
+border-radius: 50px;
+animation: bubblingG 1.3s infinite alternate;
+}
+
+#bubblingG_1 {
+-moz-animation-delay: 0s;
+-webkit-animation-delay: 0s;
+-ms-animation-delay: 0s;
+-o-animation-delay: 0s;
+animation-delay: 0s;
+}
+
+#bubblingG_2 {
+-moz-animation-delay: 0.39s;
+-webkit-animation-delay: 0.39s;
+-ms-animation-delay: 0.39s;
+-o-animation-delay: 0.39s;
+animation-delay: 0.39s;
+}
+
+#bubblingG_3 {
+-moz-animation-delay: 0.78s;
+-webkit-animation-delay: 0.78s;
+-ms-animation-delay: 0.78s;
+-o-animation-delay: 0.78s;
+animation-delay: 0.78s;
+}
+
+@-moz-keyframes bubblingG {
+0% {
+width: 10px;
+height: 10px;
+background-color:#000000;
+-moz-transform: translateY(0);
+}
+
+100% {
+width: 24px;
+height: 24px;
+background-color:#FFFFFF;
+-moz-transform: translateY(-21px);
+}
+
+}
+
+@-webkit-keyframes bubblingG {
+0% {
+width: 10px;
+height: 10px;
+background-color:#000000;
+-webkit-transform: translateY(0);
+}
+
+100% {
+width: 24px;
+height: 24px;
+background-color:#FFFFFF;
+-webkit-transform: translateY(-21px);
+}
+
+}
+
+@-ms-keyframes bubblingG {
+0% {
+width: 10px;
+height: 10px;
+background-color:#000000;
+-ms-transform: translateY(0);
+}
+
+100% {
+width: 24px;
+height: 24px;
+background-color:#FFFFFF;
+-ms-transform: translateY(-21px);
+}
+
+}
+
+@-o-keyframes bubblingG {
+0% {
+width: 10px;
+height: 10px;
+background-color:#000000;
+-o-transform: translateY(0);
+}
+
+100% {
+width: 24px;
+height: 24px;
+background-color:#FFFFFF;
+-o-transform: translateY(-21px);
+}
+
+}
+
+@keyframes bubblingG {
+0% {
+width: 10px;
+height: 10px;
+background-color:#000000;
+transform: translateY(0);
+}
+
+100% {
+width: 24px;
+height: 24px;
+background-color:#FFFFFF;
+transform: translateY(-21px);
+}
+
+}
+
+/* header section */
+header {
+	position:relative;
+	padding:0 .5em;
+}
+	header h1 {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+		color:#000;
+		font-size: 1.6em;
+
+	}
+
+/* Content section */
+article#content {
+	clear:left;
+}
+	article > section {
+		display:none;
+	}
+	article > section.active {
+		display:block;
+	}
+	article h1 {
+		margin-bottom: .5em;
+	}
+
+	article ul {
+		list-style: none;
+		margin-bottom:3em;
+	}
+/* Aside */
+aside {
+	text-align: center;
+}
+	aside h1 {
+		font-size:1.2em
+	}
+	aside img {
+		margin-bottom:1em;
+	}
+
+/* Dead Simple Grid (c) 2012 Vladimir Agafonkin */
+
+.col {
+	padding: 0 .5em;
+}
+.row .row {
+	margin: 0 -.5em;
+}
+
+.row:before, .row:after {
+	content: "";
+	display: table;
+}
+.row:after {
+	clear: both;
+}
+
+@media only screen {
+	.col {
+		float: left;
+		width: 100%;
+
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+	}
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+/* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+	/* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+	/* Styles */
+	.col {
+		width:50%;
+	}
+}
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+	/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+	/* Styles */
+}
+/**********
+iPad 3
+**********/
+@media
+only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio : 2) {
+	/* Styles */
+}
+
+@media
+only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio : 2) {
+	/* Styles */
+}
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1024px) {
+	nav {
+		position:relative;
+		padding:.2em;
+	}
+		nav ul li {
+			display:inline-block;
+			margin-right:.3em;
+
+		}
+			nav ul li a {
+				font-weight: bold;
+				display: inline-block;
+				background:#eee;
+				padding:5px 10px;
+				color:#333;
+				text-decoration: none;
+				border-radius: 5px;
+				-webkit-transition:all .2s ease;
+				border:none;
+			}
+			nav ul li a:hover {
+				background:#e0e0e0;
+				box-shadow:0 0 5px #aaa;
+				color:#333;
+			}
+
+	.col {
+		width:50%;
+	}
+	aside {
+		text-align:left;
+	}
+		aside img {
+			float:left;
+			width:25%;
+			margin-right:3%;
+		}
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) {
+/* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px)
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio : 2) {
+/* Styles */
+}
+
+@media
+only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px)
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio : 2) {
+/* Styles */
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ultimate Frisbee: Autumn 2013 Tournament</title>
+    <link href="static/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body id="body">
+    <header>
+        <h1>Ultimate Frisbee: Autumn 2013 Tournament</h1>
+        <nav>
+            <ul>
+                <li><a href="#/schedule">Schedule</a></li>
+                <li><a href="#/Ranking">Ranking</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Loader http://cssload.net/ -->
+<div class="bubblingG">
+    <span id="bubblingG_1"></span>
+    <span id="bubblingG_2"></span>
+    <span id="bubblingG_3"></span>
+</div>
+
+    <article id="content2" class="col">
+        <section data-route="game">
+                <h1 data-bind="title"></h1>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th data-bind="team_1"><span data-bind= "name"></span></th>
+                            <th data-bind="team_2"><span data-bind= "name"></span></th>
+                            <th>Verzenden</th>
+                        </tr>
+                        <tr>
+                            <td> <input type="button" value="+" id="plus1" /><input type="button" value="-" id="min1" /></td>
+                            <td> <input type="button" value="+" id="plus2" /><input type="button" value="-" id="min2" /></td>
+                            <td id="finalScore"><a href="#/schedule">Final score</a></td>
+                        </tr>
+                        <tr data-bind="objects">
+                            <td id="addScore1" data-bind="team_1_score"></td>
+                            <td id="addScore2" data-bind="team_2_score"></td>
+                        </tr>
+                    </tbody>
+                </table>
+        </section>
+
+        <section data-route="schedule">
+            <section id="fade-in" class="box swipeLeft">
+<table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Team</th>
+                            <th>Score</th>
+                            <th>Team</th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="objects">
+                        <tr>
+                            <td data-bind="tournament"><span data-bind="start_date"></span></td>
+                            <td data-bind="team_1"><span data-bind= "name"></span></td>
+                            <td><span data-bind="team_1_score"></span> - <span data-bind="team_2_score"></span></td>
+                            <td data-bind="team_2"><span data-bind= "name"></span></td>
+                            <td><button><a data-bind="track_score">Update Score</a></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+</table>
+
+</section>
+
+<section data-route="Ranking">
+     <section id="fade-in" class="box swipeRight">
+    <div data-bind="objects">
+        <h1>Pool <span data-bind="name"></span></h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Team</th>
+                    <th>W</th>
+                    <th>L</th>
+                    <th>S</th>
+                    <th>+/-</th>
+                </tr>
+            </thead>        
+            <tbody data-bind="standings">
+                <tr>
+                    <td data-bind="team"><span data-bind="name"></span></td>
+                    <td data-bind="wins"></td>
+                    <td data-bind="losses"></td>
+                    <td data-bind="points_scored"></td>
+                    <td data-bind="plus_minus"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+</section>
+</article>
+
+<!-- Libs -->
+<script src="static/js/lib/routie.min.js"></script>
+<script src="static/js/lib/ready.min.js" type="text/javascript"></script>
+<script src="static/js/lib/qwery.min.js" type="text/javascript"></script>
+<script src="static/js/lib/transparancy.min.js" type="text/javascript"></script>
+<script src="static/js/lib/quo.js" type="text/javascript"></script>
+
+<!-- Application -->
+<script src="static/js/app.js"></script>
+
+</body>
+</html>

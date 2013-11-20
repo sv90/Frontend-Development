@@ -144,16 +144,16 @@ FRISBEE.directives = {
 }
 
 FRISBEE.gestures = {
-                init: function(){
-                        $$('section.swipeLeft').swipeLeft(function() {
-                                window.location.href = "#/ranking"; 
-                        });
-                        
-                        $$('section.swipeRight').swipeRight(function() {
-                                window.location.href = "#/schedule"; 
-                        });
-                }
-        }
+    init: function(){
+        $$('section.swipeLeft').swipeLeft(function() {
+            window.location.href = "#/ranking"; 
+        });
+
+        $$('section.swipeRight').swipeRight(function() {
+            window.location.href = "#/schedule"; 
+        });
+    }
+}
 
 // Pages
 FRISBEE.page = {
