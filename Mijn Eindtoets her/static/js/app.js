@@ -5,7 +5,7 @@ var FRISBEE = FRISBEE || {};
 (function () {
     var loader = document.getElementsByClassName('bubblingG')[0];
 
-    // Initialize JS - start application (when DOM is ready)
+    // Initialize JavaScript, start application when DOM is ready
     FRISBEE.startApp = {
         init: function(){
             FRISBEE.router.init();
@@ -18,7 +18,7 @@ var FRISBEE = FRISBEE || {};
     FRISBEE.game = {
         init: function () {
                 
-            //Hier start de post functie
+            // Post function
             document.getElementById('finalScore').onclick = function () {
                 var type =  'POST',
                 url  =  'https://api.leaguevine.com/v1/game_scores/',
@@ -42,9 +42,9 @@ var FRISBEE = FRISBEE || {};
             // Send request (with data as a json string)
             xhr.send(postData);
             console.log("verzonden");
-        };
+        }
         
-            //Hier start de reken functie
+            // Math function
             score1 = parseInt(document.getElementById('addScore1').innerHTML);
             score2 = parseInt(document.getElementById('addScore2').innerHTML);
 
@@ -69,7 +69,6 @@ var FRISBEE = FRISBEE || {};
             return score2; 
         },
     
-        // Zorgt ervoor dat de score de juiste waarde bevat
         reset: function () {
             score1 = FRISBEE.page.game.scoreData.team_1_score;
             score2 = FRISBEE.page.game.scoreData.team_2_score;
@@ -78,7 +77,7 @@ var FRISBEE = FRISBEE || {};
         }
     }
 
-    //Directives
+    // Two-dimensional object literal, performed by Transparency while rendering the template
     FRISBEE.directives = {
         schedule: {
             objects: {
@@ -91,6 +90,7 @@ var FRISBEE = FRISBEE || {};
         }
     }
 
+    // Swipe method performed by Quo
     FRISBEE.gestures = {
         init: function(){
             $$('section.swipeLeft').swipeLeft(function() {
@@ -107,10 +107,9 @@ var FRISBEE = FRISBEE || {};
     FRISBEE.router = {
         init: function () {
             console.log("router.init ", FRISBEE.router);
-            //checked je URL.
+            // Routie is a JavaScript hash routing library
             routie({
                 '/game/:game_id': function(game_id) {
-                //alert('game id =' + id);
                     FRISBEE.page.game(game_id);
                 },
             
@@ -130,7 +129,7 @@ var FRISBEE = FRISBEE || {};
         },
 
         change: function (pageName) {
-        //qwery selector engine, selecteerd elementen uit DOM
+        // Qwery is a Javascript engine to select DOM elements
             var route = pageName,
                 sections = qwery('section[data-route]'),
                 section = qwery('[data-route=' + route + ']')[0];  

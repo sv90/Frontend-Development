@@ -44,6 +44,7 @@ a {
 	color:#000;
 	-webkit-transition:all .5s ease;
 }
+
 ul {
 	list-style:none;
 	margin:0;
@@ -100,6 +101,54 @@ th, td {
 th {
 	font-weight: bold;
 	text-align:left;
+}
+button {
+	font-weight: bold;
+	display: inline-block;
+	background:#eee;
+	padding:5px 10px;
+	color:#333;
+	text-decoration: none;
+	border-radius: 5px;
+	-webkit-transition:all .2s ease;
+	border:none;
+}
+button a {
+	text-decoration:none;
+}
+button:hover {
+	background:#000;
+}
+button a:hover {
+	color:#fff;
+}
+
+a {
+	font-weight: bold;
+	display: inline-block;
+	background:#eee;
+	padding:5px 10px;
+	color:#333;
+	text-decoration: none;
+	border-radius: 5px;
+	-webkit-transition:all .2s ease;
+	border:none;
+	text-decoration:none;
+}
+a:hover {
+	background:#000;
+	color:#fff;
+}
+
+input {
+	font-weight: bold;
+	display: inline-block;
+	background:#eee;
+	padding:5px 10px;
+	color:#333;
+	text-decoration: none;
+	border-radius: 5px;
+	border:none;
 }
 figure {
 	margin:0;
@@ -403,7 +452,6 @@ and (min-width : 1024px) {
 		nav ul li {
 			display:inline-block;
 			margin-right:.3em;
-
 		}
 			nav ul li a {
 				font-weight: bold;
@@ -417,13 +465,12 @@ and (min-width : 1024px) {
 				border:none;
 			}
 			nav ul li a:hover {
-				background:#e0e0e0;
-				box-shadow:0 0 5px #aaa;
-				color:#333;
+				background:#000;
+				color:#fff;
 			}
 
 	.col {
-		width:50%;
+		width:100%;
 	}
 	aside {
 		text-align:left;
