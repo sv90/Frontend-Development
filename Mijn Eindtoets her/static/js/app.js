@@ -3,9 +3,10 @@ var FRISBEE = FRISBEE || {};
 
 // Self-invoking anonymous function
 (function () {
+    // Returns HTML class element named bubblingG, which contains the loader
     var loader = document.getElementsByClassName('bubblingG')[0];
 
-    // Initialize JavaScript, start application when DOM is ready
+    // Start, render application when DOM is ready // Execute init method's inside router, gestures and game
     FRISBEE.startApp = {
         init: function(){
             FRISBEE.router.init();
@@ -14,14 +15,74 @@ var FRISBEE = FRISBEE || {};
         }
     };
 
-    // Data objects
+    // Router
+    FRISBEE.router = {
+        init: function () {
+            console.log("router.init ", FRISBEE.router);
+            // Routie is a JavaScript hash routing library
+            routie({
+                '/game/:game_id': function(game_id) {
+                    FRISBEE.page.game(game_id);
+                },
+            
+                '/schedule': function() {
+                    FRISBEE.page.schedule();
+                },
+
+                '/Ranking': function() {
+                    FRISBEE.page.Ranking();
+                },
+
+                '*': function() {
+                    FRISBEE.page.schedule();
+                } 
+
+            });
+        },
+
+        change: function (pageName) {
+        // Qwery is a Javascript engine to select DOM elements
+            var route = pageName,
+                sections = qwery('section[data-route]'),
+                section = qwery('[data-route=' + route + ']')[0];  
+
+            // Show active section, hide all other (for loop)
+            if (section) {
+                for (var i=0; i < sections.length; i++){
+                    sections[i].classList.remove('active');
+                }
+                $$('[data-route='+pageName+']')[0].classList.add('active');
+            }
+
+            // Default route (no route, go default state)
+            if (!route) {
+                sections[0].classList.add('active');
+            }
+        }
+    };
+
+    // Swipe method performed by Quo
+    FRISBEE.gestures = {
+        init: function(){
+            $$('section.swipeLeft').swipeLeft(function() {
+                window.location.href = "#/ranking"; 
+            });
+
+            $$('section.swipeRight').swipeRight(function() {
+                window.location.href = "#/schedule"; 
+            });
+        }
+    }
+
+    // Game object (get and post score)
     FRISBEE.game = {
         init: function () {
                 
-            // Post function
+            // Post finalScore
             document.getElementById('finalScore').onclick = function () {
                 var type =  'POST',
                 url  =  'https://api.leaguevine.com/v1/game_scores/',
+                // Convert value to JSON
                 postData         = JSON.stringify({
                     game_id: FRISBEE.page.game.scoreData.id,
                     team_1_score: FRISBEE.game.getScore1(),
@@ -89,65 +150,6 @@ var FRISBEE = FRISBEE || {};
             }
         }
     }
-
-    // Swipe method performed by Quo
-    FRISBEE.gestures = {
-        init: function(){
-            $$('section.swipeLeft').swipeLeft(function() {
-                window.location.href = "#/ranking"; 
-            });
-
-            $$('section.swipeRight').swipeRight(function() {
-                window.location.href = "#/schedule"; 
-            });
-        }
-    }
-
-    // Router
-    FRISBEE.router = {
-        init: function () {
-            console.log("router.init ", FRISBEE.router);
-            // Routie is a JavaScript hash routing library
-            routie({
-                '/game/:game_id': function(game_id) {
-                    FRISBEE.page.game(game_id);
-                },
-            
-                '/schedule': function() {
-                    FRISBEE.page.schedule();
-                },
-
-                '/Ranking': function() {
-                    FRISBEE.page.Ranking();
-                },
-
-                '*': function() {
-                    FRISBEE.page.schedule();
-                } 
-
-            });
-        },
-
-        change: function (pageName) {
-        // Qwery is a Javascript engine to select DOM elements
-            var route = pageName,
-                sections = qwery('section[data-route]'),
-                section = qwery('[data-route=' + route + ']')[0];  
-
-            // Show active section, hide all other (for loop)
-            if (section) {
-                for (var i=0; i < sections.length; i++){
-                    sections[i].classList.remove('active');
-                }
-                $$('[data-route='+pageName+']')[0].classList.add('active');
-            }
-
-            // Default route (no route, go default state)
-            if (!route) {
-                sections[0].classList.add('active');
-            }
-        }
-    };
 
     // Pages
     FRISBEE.page = {

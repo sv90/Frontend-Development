@@ -179,6 +179,9 @@ figcaption {
 text-align: center;
 width:80px;
 height:50px;
+position:fixed;
+top:40%;
+right:50%;
 }
 
 .bubblingG span {
