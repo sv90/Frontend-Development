@@ -121,7 +121,7 @@ var FRISBEE = FRISBEE || {};
                         is_final: 'True'
                     });
 
-            // Create request
+            // Create request Xml Http Request
             var xhr = new XMLHttpRequest();
 
             // Open request, asynchronous (synchronous blocks the execution of code)
@@ -212,10 +212,16 @@ var FRISBEE = FRISBEE || {};
             //Show the loader
             loader.style.display = 'block';
             $$.get('https://api.leaguevine.com/v1/games/'+game_id+'/?access_token=ab86750dfd',{}, function(data){
+                
+                // Create object scoreData, store results AJAX call here 
                 FRISBEE.page.game.scoreData = data;
+                
+                // Bind object scoreData with div 'data-route=game'
                 Transparency.render(qwery('[data-route=game]')[0], FRISBEE.page.game.scoreData);
+                
                 FRISBEE.game.reset();
                 console.log(FRISBEE.page.game.scoreData);
+                
                 //Hide the loader
                 loader.style.display = 'none';
                 FRISBEE.router.change('game');
@@ -227,9 +233,14 @@ var FRISBEE = FRISBEE || {};
             loader.style.display = 'block';
             $$.get('https://api.leaguevine.com/v1/games/?pool_id=19219&access_token=1402975c1b',{}, function(data){
                 var directives = FRISBEE.directives.schedule;
+
+                // Create object scoreData, store results AJAX call here 
                 FRISBEE.page.schedule.poolData = data;
+
+                // Bind object poolData with div 'data-route=schedule'
                 Transparency.render(qwery('[data-route=schedule]')[0], FRISBEE.page.schedule.poolData, directives);
                 console.log(FRISBEE.page.schedule.poolData);
+                
                 //Hide the loader
                 loader.style.display = 'none';
                 FRISBEE.router.change('schedule');
