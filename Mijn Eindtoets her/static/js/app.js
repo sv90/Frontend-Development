@@ -16,7 +16,7 @@
                 - game
                         - init()
                                 - FetchAll()
-                                - Post(url,postData)
+                                - Post(url,uploadScore)
                                         - page.schedule()
                 - directives
                         - schedule
