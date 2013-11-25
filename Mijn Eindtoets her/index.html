@@ -17,13 +17,6 @@
         </nav>
     </header>
 
-    <!-- Loader http://cssload.net/ -->
-<div class="bubblingG">
-    <span id="bubblingG_1"></span>
-    <span id="bubblingG_2"></span>
-    <span id="bubblingG_3"></span>
-</div>
-
     <article id="content2" class="col">
         <section data-route="game">
                 <h1 data-bind="title"></h1>
@@ -32,16 +25,17 @@
                         <tr>
                             <th data-bind="team_1"><span data-bind= "name"></span></th>
                             <th data-bind="team_2"><span data-bind= "name"></span></th>
-                            <th>Verzenden</th>
+                            <th>Send</th>
                         </tr>
                         <tr>
                             <td> <input type="button" value="+" id="plus1" /><input type="button" value="-" id="min1" /></td>
                             <td> <input type="button" value="+" id="plus2" /><input type="button" value="-" id="min2" /></td>
-                            <td id="finalScore"><a href="#/schedule">Final score</a></td>
+                            <td><button id="finalScore">Final score</button></td>
                         </tr>
                         <tr data-bind="objects">
                             <td id="addScore1" data-bind="team_1_score"></td>
                             <td id="addScore2" data-bind="team_2_score"></td>
+                            <td>&nbsp;</td>
                         </tr>
                     </tbody>
                 </table>
@@ -56,6 +50,7 @@
                             <th>Team</th>
                             <th>Score</th>
                             <th>Team</th>
+                            <th>&nbsp;</th>
                         </tr>
                     </thead>
                     <tbody data-bind="objects">
@@ -101,6 +96,13 @@
 </section>
 </section>
 </article>
+
+ <!-- Loader http://cssload.net/ -->
+<div class="bubblingG">
+    <span id="bubblingG_1"></span>
+    <span id="bubblingG_2"></span>
+    <span id="bubblingG_3"></span>
+</div>
 
 <!-- Libs -->
 <script src="static/js/lib/routie.min.js"></script>
